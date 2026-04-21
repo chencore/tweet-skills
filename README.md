@@ -2,18 +2,49 @@
 
 基于 OpenClaw 的 X 平台推文自动创作技能包。覆盖从选题采集到推文交付的完整流水线。
 
+**核心目标**：输出 400-600字、让人忍不住收藏的推文。
+
 ## 技能列表
 
-| 技能 | 功能 | 触发词 |
-|------|------|--------|
-| [hot-topics](skills/hot-topics/SKILL.md) | 热点选题采集 | 「采集热点」「找选题」 |
-| [topic-research](skills/topic-research/SKILL.md) | 选题调研，搜集多源素材 | 「调研XX」「搜集资料」 |
-| [opinion-generator](skills/opinion-generator/SKILL.md) | 从10个角度生成独特观点 | 「生成观点」「提炼角度」 |
-| [tweet-writer](skills/tweet-writer/SKILL.md) | 10种风格推文写作 | 「写推文」「tweet」 |
-| [tweet-polish](skills/tweet-polish/SKILL.md) | 口语化改写，消除AI味 | 「口语化」「polish」 |
-| [title-optimizer](skills/title-optimizer/SKILL.md) | 5个方向的标题优化 | 「起标题」「优化标题」 |
-| [tweet-closing](skills/tweet-closing/SKILL.md) | 5种结尾转化钩子 | 「写结尾」「加钩子」 |
-| [tweet-pipeline](skills/tweet-pipeline/SKILL.md) | 主控流水线：一键全流程 | 「流水线」「一键推文」 |
+| 技能 | 功能 | 字数/特性 | 触发词 |
+|------|------|-----------|--------|
+| [hot-topics](skills/hot-topics/SKILL.md) | 热点选题采集 | 10-20个选题 | 「采集热点」「找选题」 |
+| [topic-research](skills/topic-research/SKILL.md) | 选题调研，搜集多源素材 | 500-800字结构化素材 | 「调研XX」「搜集资料」 |
+| [opinion-generator](skills/opinion-generator/SKILL.md) | 从10个角度生成独特观点 | 含示例和反例参考 | 「生成观点」「提炼角度」 |
+| [tweet-writer](skills/tweet-writer/SKILL.md) | 10种风格推文写作 | **400-600字**，含收藏理由 | 「写推文」「tweet」 |
+| [tweet-polish](skills/tweet-polish/SKILL.md) | 口语化改写，消除AI味 | 三级检测系统，AI味评分 | 「口语化」「polish」 |
+| [title-optimizer](skills/title-optimizer/SKILL.md) | 5个方向的标题优化 | 不超过20字/方向 | 「起标题」「优化标题」 |
+| [tweet-closing](skills/tweet-closing/SKILL.md) | 5种结尾转化钩子 | 2-3个备选/类型 | 「写结尾」「加钩子」 |
+| [tweet-pipeline](skills/tweet-pipeline/SKILL.md) | 主控流水线：一键全流程 | 400-600字成品 | 「流水线」「一键推文」 |
+
+## 核心特性
+
+### 收藏价值设计
+
+每条推文必须满足以下至少 2 条：
+- 有数据：具体数字（如42.5分、3个月）
+- 有判断：独特观点，不是常识
+- 有可操作：工具/方法/步骤
+- 有记忆点：一句话概括全文
+
+### 去 AI 味系统
+
+tweet-polish 采用三级检测：
+- **L1 词汇**：自动替换 AI 表达（因此→所以）
+- **L2 句式**：检测完整句比例，超过60%则拆句
+- **L3 节奏**：制造段落长短差
+
+目标：AI 味评分 ≤ 4
+
+### 统一字数标准
+
+| 阶段 | 字数要求 |
+|------|----------|
+| tweet-writer 输出 | 400-600字 |
+| tweet-polish 改写后 | 400-600字 |
+| topic-research 素材 | 500-800字 |
+| title-optimizer 标题 | 不超过20字 |
+| tweet-closing 结尾 | 不超过2句 |
 
 ## 安装
 
