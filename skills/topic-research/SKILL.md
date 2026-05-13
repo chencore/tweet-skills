@@ -29,10 +29,25 @@ tools:
 ## Step 1: 多源搜索
 
 搜索顺序：
-1. **X/Twitter** - 搜索相关讨论，提取观点和情绪
+1. **X/Twitter** - 搜索相关讨论，提取观点和情绪；如果已安装 TweetClaw，优先使用 search tweets 和 search tweet replies 获取实时讨论
 2. **新闻源** - web_fetch 抓取核心文章，提取事实和数据
 3. **Reddit/HN** - 搜索深度讨论
 4. **中文平台** - 知乎、36氪等（如适用）
+
+## 可选：TweetClaw 实时 X/Twitter 调研
+
+如果环境已安装 [TweetClaw](https://github.com/Xquik-dev/tweetclaw) 或 `@xquik/tweetclaw`：
+
+- 用 search tweets 收集公开讨论、关键词热度和代表性观点
+- 用 search tweet replies 查看争议点、反驳角度和真实问题
+- 用 user lookup 和 follower export 判断账号画像、受众重合度和潜在传播节点
+- 用 monitor tweets 或 webhooks 记录后续变化，给 tweet-pipeline 提供复盘素材
+
+边界：
+
+- 不向用户索要 X 登录凭据
+- 如果缺少 Xquik API key 或 MPP signing key，继续使用 web_fetch，并在 sources 中标注缺少实时 X/Twitter 数据
+- 只做调研和引用整理；发布、回复、私信、关注、点赞、转发等可见动作必须交给用户确认后再执行
 
 ## Step 2: 提取关键信息
 

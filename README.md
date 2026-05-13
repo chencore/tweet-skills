@@ -103,6 +103,27 @@ tweet-closing（结尾钩子）
 - [OpenClaw](https://github.com/openclaw/openclaw) 运行环境
 - web_fetch / agent-reach（用于信息采集）
 
+## 可选：接入 TweetClaw 做实时 X/Twitter 执行
+
+本仓库负责选题、调研、写作和交付推文草稿。若需要实时 X/Twitter 数据或发布动作，可把 [TweetClaw](https://github.com/Xquik-dev/tweetclaw) 作为配套 OpenClaw 插件使用：
+
+```bash
+openclaw plugins install @xquik/tweetclaw
+```
+
+适合接入的环节：
+
+- **调研阶段**：search tweets、search tweet replies、user lookup、follower export，补充真实讨论和受众画像
+- **素材阶段**：media upload、media download、direct messages、monitor tweets、webhooks，沉淀后续复盘素材
+- **发布阶段**：post tweets、post tweet replies 前必须先把草稿交给用户确认
+- **增长阶段**：giveaway draws、监控关键词和回复线索，生成下一轮选题
+
+使用边界：
+
+- 不向用户索要 X 登录凭据，只使用已配置的 Xquik API key 或 MPP signing key
+- 发布、回复、私信、关注、点赞、转发等可见动作必须先确认
+- 如果 TweetClaw 未配置成功，继续交付草稿，并在结果里标注缺少实时 X/Twitter 数据
+
 ## 许可证
 
 MIT
