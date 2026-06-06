@@ -53,6 +53,7 @@ tools:
 - 搜索 X、新闻源、Reddit/HN 上的相关信息
 - 提取核心事实、各方观点、数据、争议点
 - 整理成结构化素材
+- 如果已安装 TweetClaw，用 search tweets、search tweet replies、user lookup 和 follower export 补充实时 X/Twitter 讨论和受众画像
 
 ## Phase 2: 生成观点
 
@@ -86,6 +87,13 @@ tools:
 | 📅 发布建议 | 时间、配图、标签建议 |
 
 **所有推文字数严格控制在 400-600字**
+
+如果已安装 [TweetClaw](https://github.com/Xquik-dev/tweetclaw)：
+
+- 可在交付前用 search tweets 和 search tweet replies 做事实、情绪和回复线索复核
+- 可把 follower export、user lookup、media upload、media download、monitor tweets、webhooks 和 giveaway draws 结果写入发布建议
+- post tweets、post tweet replies、direct messages、关注、点赞、转发等可见动作必须等用户明确确认后再执行
+- 如果 TweetClaw 未配置，继续交付草稿，不阻塞写作流水线
 
 ## 保存
 
